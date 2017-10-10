@@ -46,6 +46,16 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'rspec-rails', '2.14'
+  gem 'simplecov', :require => false
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'autotest-rails'
+  gem 'metric_fu'
+end
+
 group :production do
   # make sure the following gems are in your production group:
   gem 'pg'
