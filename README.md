@@ -2,6 +2,8 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/cf5788c5d3a2ad8ff1c5/test_coverage)](https://codeclimate.com/github/yenak/action-map/test_coverage)
 
+[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
+
 [![Build Status](https://travis-ci.org/yenak/action-map.svg?branch=master)](https://travis-ci.org/yenak/action-map)
 
 Link to app on Heroku: https://action-map.herokuapp.com/
