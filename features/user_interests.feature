@@ -13,13 +13,13 @@ Feature: User should be able to log in to an existing account or create a new on
 
 Scenario: save interests button works
   When I am on the interests page
-  And I press "save interests"
+  And I press "save"
   Then I should be on the interests page
 
 Scenario: interest selections are saved
   # see assignment
   When I check the following interests: i1, i2 
-  When I press "save interests"
+  When I press "save"
   Then the i1 checkbox should be checked
   And the i2 checkbox should be checked
   And the i3 checkbox should not be checked
@@ -27,6 +27,7 @@ Scenario: interest selections are saved
  Scenario: interests still saved after page change
    When I am on the interests page
    And I check the following interests: i1, i2
+   And I press "save"
    And I go to the home page
    And I go to the interests page
    Then the i1 checkbox should be checked

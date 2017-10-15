@@ -41,6 +41,7 @@ Scenario: Successfully creating a new account
   Given I am on the new account page
   When I fill in "username" with "user3"
   And I fill in "password" with "password3"
+  And I fill in "confirm password" with "password3"
   Then I should be on the interests page
   And I should see "user3"
   
@@ -49,6 +50,15 @@ Scenario: Attempt to create account with existing username
   Given I am on the new account page
   When I fill in "username" with "user1"
   And I fill in "password" with "password3"
+  And I fill in "confirm password" with "password3"
   Then I should be on the new account page
   And I should see "Username taken"
+
+Scenario: filling in confirm password with wrong password
+  Given I am on the new account page
+  When I fill in "username" with "user1"
+  And I fill in "password" with "password3"
+  And I fill in "confirm password" with "password4"
+  Then I should be on the new account page
+  And I should see "confirm password does not match password"
 
