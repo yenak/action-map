@@ -4,12 +4,12 @@ Feature: User should be able to log in to an existing account or create a new on
   So that I can stay updated in topic I care about
   I want to set interests to filter the information I receive
 
-Background: i1, i2, i3 exist
+# Background: i1, i2, i3 exist
 
-  Given the following users exist:
-  | username                | password   |
-  | user1                   | password1  |
-  | user2                   | password2  |
+#   Given the following users exist:
+#   | username                | password   |
+#   | user1                   | password1  |
+#   | user2                   | password2  |
 
 Scenario: save interests button works
   When I am on the interests page
