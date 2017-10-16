@@ -22,7 +22,10 @@ class UsersController < ApplicationController
 
     def create
         begin
-            if params[:user][:confirm_password] != params[:user][:password]
+            if User.where(username: params[:user][:username])[0]
+                flash[:error] = "Username already exists."
+                redirect_to new_user_path
+            elsif params[:user][:confirm_password] != params[:user][:password]
                 flash[:error] = "Passwords must match."
                 redirect_to new_user_path
             else
@@ -30,7 +33,7 @@ class UsersController < ApplicationController
                 redirect_to users_path
             end
         rescue
-            flash[:error] = "#{@user.username} could not be created."
+            flash[:error] = "User could not be created."
             redirect_to new_user_path
         end
     end
@@ -42,7 +45,7 @@ class UsersController < ApplicationController
     def authenticate
         user = User.where(username: params[:username])[0]
         if user.nil? or user.password != params[:password]
-            flash[:error] = "That username and password combination does not exist."
+            flash[:error] = "User and password match not found."
             redirect_to login_user_path
         else
             redirect_to users_path

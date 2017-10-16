@@ -1,6 +1,6 @@
-%hi Account 
+%hi Account
 
-= form_tag edit_user_path(@user), :method => :get do
+= form_tag users_path, :method => :get do
 
     Include:
     - @all_interests.each do |interest|
@@ -8,3 +8,5 @@
         = interest
 
     = submit_tag 'save'
+
+= link_to 'Return to home page', users_path
