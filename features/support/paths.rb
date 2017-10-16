@@ -21,10 +21,10 @@ module NavigationHelpers
     #
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
-    
+
     when /^the interests page for "(.*)"/
       edit_user_path(User.find_by_username($1))
-      
+
     when /^the new account page/
       new_user_path
 
