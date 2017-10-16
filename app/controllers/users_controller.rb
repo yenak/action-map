@@ -35,7 +35,7 @@ class UsersController < ApplicationController
                 redirect_to new_user_path
             else
                 @user = User.create!(user_params)
-                redirect_to users_path
+                redirect_to edit_user_path(@user)
             end
         rescue
             flash[:error] = "User could not be created."
@@ -48,8 +48,8 @@ class UsersController < ApplicationController
     end
 
     def authenticate
-        user = User.where(username: params[:username])[0]
-        if user.nil? or user.password != params[:password]
+        user = User.where(username: params[:user][:username])[0]
+        if user.nil? or user.password != params[:user][:password]
             flash[:error] = "User and password match not found."
             redirect_to login_user_path
         else

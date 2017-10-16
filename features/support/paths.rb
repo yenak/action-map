@@ -14,7 +14,7 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      '/'
+      users_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
@@ -29,7 +29,7 @@ module NavigationHelpers
       new_user_path
 
     when /^the login page/
-      login_path
+      login_user_path
 
     else
       begin

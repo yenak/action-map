@@ -5,8 +5,14 @@ Given /the following users exist/ do |users_table|
     end
 end
 
-When /I check the following interests: (.*)/ do |interest_list|
+When /I (un)?check the following interests: (.*)/ do |uncheck, interest_list|
     interest_list.split(', ').each do |interest|
-        step %{I check "interests_#{interest}"}
+        step %{I #{uncheck.nil? ? '' : 'un'}check "interests_#{interest}"}
     end
-end 
+end
+
+Then /the following interests should (not )?be checked: (.*)/ do |uncheck, interest_list|
+    interest_list.split(', ').each do |interest|
+        step %{the "interests_#{interest}" checkbox should#{uncheck.nil? ? '' : ' not'} be checked}
+    end
+end

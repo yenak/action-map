@@ -9,6 +9,8 @@
     = label :user, :password, 'Password'
     = text_field :user, 'password'
 
-    = submit_tag 'log in'
+    = submit_tag 'Log In'
+
+= link_to 'Create new account', new_user_path
 
 = link_to 'Return to home page', users_path
