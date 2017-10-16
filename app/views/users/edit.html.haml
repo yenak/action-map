@@ -1,12 +1,11 @@
 %hi Account
 
-= form_tag users_path, :method => :get do
+= form_tag edit_user_path(@user), :method => :get do
 
     Include:
     - @all_interests.each do |interest|
-        = check_box_tag "#{interest}", 1, @selected_interests.include?(interest), id: "interests_#{interest}"
         = interest
-
-    = submit_tag 'save'
+        = check_box_tag "interests[#{interest}]", 1, @selected_interests.include?(interest), id: "interests_#{interest}"
+    = submit_tag 'Save', :id => 'interests_submit'
 
 = link_to 'Return to home page', users_path

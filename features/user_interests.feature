@@ -23,7 +23,7 @@ Scenario: interest selections are saved
   Then the "environment" checkbox should be checked
   And the "gun control" checkbox should be checked
   And the "immigration" checkbox should not be checked
-  
+
  Scenario: interests still saved after page change
    When I am on the interests page for "user1"
    And I check the following interests: environment
