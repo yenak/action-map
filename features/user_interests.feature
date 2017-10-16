@@ -26,7 +26,7 @@ Scenario: interest selections are saved
   
  Scenario: interests still saved after page change
    When I am on the interests page for "user1"
-   And I check the following interests: "environment"
+   And I check the following interests: environment
    And I press "save"
    And I go to the home page
    And I go to the interests page "user1"

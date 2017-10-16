@@ -28,6 +28,9 @@ module NavigationHelpers
     when /^the new account page/
       new_user_path
 
+    when /^the login page/
+      login_path
+
     else
       begin
         page_name =~ /^the (.*) page$/

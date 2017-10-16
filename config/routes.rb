@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   
   root :to => redirect('/users')
   
+  get 'users/login' => 'users#login', as: 'login'
+  
   # get 'users/:id/interests' => 'users#interests', as: 'interests'
   
   # The priority is based upon order of creation: first created -> highest priority.
