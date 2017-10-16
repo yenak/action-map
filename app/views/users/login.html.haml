@@ -1,6 +1,7 @@
 %h1 Log In
 
-= form_tag users_path :method=> 'get' do
+%p{:class => "error"}= flash[:error]
+= form_tag authenticate_user_path, :method => 'post' do
 
     = label :user, :username, 'Username'
     = text_field :user, 'username'

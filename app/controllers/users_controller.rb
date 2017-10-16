@@ -21,14 +21,30 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create!(user_params)
-        flash[:notice] = "#{@user.username} was successfully created."
-        redirect_to users_path
+        begin
+            @user = User.create!(user_params)
+            flash[:notice] = "#{@user.username} was successfully created."
+            redirect_to users_path
+        rescue
+            flash[:notice] = "#{@user.username} could not be created."
+            redirect_to new_user_path
+        end
     end
 
     def show
-       redirect_to user_edit_path
+       redirect_to edit_user_path
     end
+
+    def authenticate
+        user = User.where(username: params[:username])[0]
+        if user.nil? or user.password != params[:password]
+            flash[:error] = "That username and password combination does not exist."
+            redirect_to login_user_path
+        else
+            redirect_to users_path
+        end
+    end
+
     def login
     end
 
