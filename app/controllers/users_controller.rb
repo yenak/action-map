@@ -22,11 +22,15 @@ class UsersController < ApplicationController
 
     def create
         begin
-            @user = User.create!(user_params)
-            flash[:notice] = "#{@user.username} was successfully created."
-            redirect_to users_path
+            if params[:user][:confirm_password] != params[:user][:password]
+                flash[:error] = "Passwords must match."
+                redirect_to new_user_path
+            else
+                @user = User.create!(user_params)
+                redirect_to users_path
+            end
         rescue
-            flash[:notice] = "#{@user.username} could not be created."
+            flash[:error] = "#{@user.username} could not be created."
             redirect_to new_user_path
         end
     end
