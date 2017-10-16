@@ -8,7 +8,7 @@
 
 Link to app on Heroku: https://action-map.herokuapp.com/
 
-Link to Pivotal Tracker Project: https://www.pivotaltracker.com/n/projects/2118581
+Link to Pivotal Tracker Project: https://www.pivotaltracker.com/n/projects/2119805
 
 
 # Brief Overview
