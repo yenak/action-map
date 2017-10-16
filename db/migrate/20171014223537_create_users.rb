@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :username
       t.string :password
-      t.Hash :interests
+      t.string :interests, :array => true
 
       t.timestamps null: false
     end

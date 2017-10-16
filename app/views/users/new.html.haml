@@ -1,0 +1,14 @@
+%h1 User Sign Update
+
+= form_tag users_path do
+
+    = label :user, :username, 'Username'
+    = text_field :user, 'username'
+    
+    = label :user, :password, 'Password'
+    = text_field :user, 'password'
+    
+    = label :user, 'Confirm Password'
+    = text_field :user, 'confirm_password'
+    
+    = submit_tag 'Sign Up'

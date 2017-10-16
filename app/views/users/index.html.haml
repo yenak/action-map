@@ -1,0 +1,9 @@
+%h1 HOME PAGE
+
+%table#users
+    %tbody
+        - @users.each do |user|
+            %tr
+                %td= link_to "editing #{user.username}", edit_user_path(user)
+                
+= link_to 'Add new user', new_user_path

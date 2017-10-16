@@ -18,16 +18,16 @@ Scenario: go to the login page
 
 Scenario: log into an existing account
   Given I am on the login page
-  When I fill in "username" with "user1"
-  And I fill in "password" with "password1"
+  When I fill in "user_username" with "user1"
+  And I fill in "user_password" with "password1"
   And I press "log in"
   Then I should be on the home page
   And I should see "user1"
 
 Scenario: log into a nonexisting account
   Given I am on the login page
-  When I fill in "username" with "user1"
-  And I fill in "password" with "password2"
+  When I fill in "user_username" with "user1"
+  And I fill in "user_password" with "password2"
   And I press "log in"
   Then I should be on the login page
   And I should see "User and password match not found."
@@ -39,26 +39,26 @@ Scenario: go to new account creation page
 
 Scenario: Successfully creating a new account
   Given I am on the new account page
-  When I fill in "username" with "user3"
-  And I fill in "password" with "password3"
-  And I fill in "confirm password" with "password3"
+  When I fill in "user_username" with "user3"
+  And I fill in "user_password" with "password3"
+  And I fill in "user_confirm_password" with "password3"
   Then I should be on the interests page
   And I should see "user3"
   
   
 Scenario: Attempt to create account with existing username
   Given I am on the new account page
-  When I fill in "username" with "user1"
-  And I fill in "password" with "password3"
-  And I fill in "confirm password" with "password3"
+  When I fill in "user_username" with "user1"
+  And I fill in "user_password" with "password3"
+  And I fill in "user_confirm_password" with "password3"
   Then I should be on the new account page
   And I should see "Username taken"
 
 Scenario: filling in confirm password with wrong password
   Given I am on the new account page
-  When I fill in "username" with "user1"
-  And I fill in "password" with "password3"
-  And I fill in "confirm password" with "password4"
+  When I fill in "user_username" with "user1"
+  And I fill in "user_password" with "password3"
+  And I fill in "user_confirm_password" with "password4"
   Then I should be on the new account page
   And I should see "confirm password does not match password"
 
