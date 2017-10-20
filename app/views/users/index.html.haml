@@ -9,3 +9,9 @@
                 %td= link_to "Edit #{user.username}", edit_user_path(user)
 
 = link_to 'Create new account', new_user_path
+
+= form_tag '/rotas' do
+    = field_set_tag do
+        = label_tag :phone_number, 'Phone Number:'
+        = text_field_tag :phone_number
+        = submit_tag 'Call'
