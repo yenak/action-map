@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post '/user' => 'users#authenticate', as: 'authenticate_user'
   get 'users/login' => 'users#login', as: 'login_user'
 
-  root :to => redirect('/users')
+  root :to => 'calls#index'
 
   # get 'users/:id/interests' => 'users#interests', as: 'interests'
 
