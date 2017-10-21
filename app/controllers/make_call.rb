@@ -1,13 +1,17 @@
-require("bundler")
-Bundler.require
+# Get twilio-ruby from twilio.com/docs/ruby/install
+require 'twilio-ruby'
 
-account_sid = ENV["TWLIO_ACCOUNT_SID"]
-auth_token = ENV["TWILIO_AUTH_TOKEN"]
+# Get your Account SID and Auth Token from twilio.com/console
+account_sid = 'id'
+auth_token = 'token'
 
+# Initialize Twilio Client
 @client = Twilio::REST::Client.new(account_sid, auth_token)
 
-@client.calls.create(
-    to: ENV["MY_PHONE_NUMBER"],
-    from: "+1215234175",
-    url: "http://demo.twilio.com/docs/voice.xml"
+@call = @client.calls.create(
+  url: 'http://demo.twilio.com/docs/voice.xml',
+  to: '+19083476839',
+  from: '+15106069312 '
 )
+
+puts @call.sid
