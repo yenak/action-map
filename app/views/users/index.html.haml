@@ -1,6 +1,6 @@
 %h1 HOME PAGE
 
-= link_to "Log In", login_user_path
+= link_to "Log In", new_user_session_path
 
 %table#users
     %tbody
@@ -8,4 +8,4 @@
             %tr
                 %td= link_to "Edit #{user.username}", edit_user_path(user)
 
-= link_to 'Create new account', new_user_path
+= link_to 'Create new account', new_user_registration_path
