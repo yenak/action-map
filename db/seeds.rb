@@ -23,3 +23,5 @@ states = {'ALABAMA': 'AL', 'ALASKA': 'AK', 'ARIZONA': 'AZ', 'ARKANSAS': 'AR',
 states.each do |state, symbol|
   State.create(name: state, symbol: symbol)
 end
+
+Rake::Task['sample_map:populate_ca'].invoke
