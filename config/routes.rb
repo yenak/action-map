@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'users/login' => 'users#login', as: 'login_user'
 
   root :to => 'map#index'
-
+  get '/state/:state' => 'map#state'
   # get 'users/:id/interests' => 'users#interests', as: 'interests'
 
   # The priority is based upon order of creation: first created -> highest priority.
