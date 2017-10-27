@@ -11,7 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171014223537) do
+ActiveRecord::Schema.define(version: 20171026235034) do
+
+  create_table "calls", force: :cascade do |t|
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "representative_id"
+    t.integer  "user_id"
+  end
+
+  add_index "calls", ["representative_id"], name: "index_calls_on_representative_id"
+  add_index "calls", ["user_id"], name: "index_calls_on_user_id"
+
+  create_table "counties", force: :cascade do |t|
+    t.string   "name",                           null: false
+    t.integer  "states_id"
+    t.string   "activity",   default: "neutral"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  create_table "representatives", force: :cascade do |t|
+    t.string   "name",         null: false
+    t.string   "phone_number"
+    t.string   "state"
+    t.string   "city"
+    t.string   "interests"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string   "name",                           null: false
+    t.string   "activity",   default: "neutral"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "symbol"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username"

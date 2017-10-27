@@ -1,9 +1,9 @@
-$("path, polyline").hover(function(e) {
+$("path, polyline, polygon").hover(function(e) {
   $('#info-box').css('display','block');
-  $('#info-box').html('Placeholder');
+  $('#info-box').html($(this).attr('id'));
 });
 
-$("path, polyline").mouseleave(function(e) {
+$("path, polyline, polygon").mouseleave(function(e) {
   $('#info-box').css('display','none');
 });
 

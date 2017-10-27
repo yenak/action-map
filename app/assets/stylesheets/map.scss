@@ -11,7 +11,7 @@
   height: 100%;
 }
 
-path:hover, polyline:hover {
+path:hover, polyline:hover, polygon:hover {
   stroke: #0022868 !important;
   stroke-width:2px;
   stroke-linejoin: round;
@@ -30,4 +30,20 @@ path:hover, polyline:hover {
   border-radius: 5px;
   padding: 5px;
   font-family: arial;
+}
+
+.active {
+  fill: #1a9641;
+}
+.semi-active {
+  fill: #a6d96a;
+}
+.neutral {
+  fill: #ffffbf;
+}
+.semi-inactive {
+  fill: #fdae61;
+}
+.inactive{
+  fill: #d7191c;
 }
