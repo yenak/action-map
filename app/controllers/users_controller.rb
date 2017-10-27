@@ -18,32 +18,4 @@ class UsersController < ApplicationController
 
     end
 
-    def new
-    end
-
-    def create
-        begin
-            if User.where(username: params[:user][:username])[0]
-                flash[:error] = "Username already exists."
-                redirect_to new_user_path
-            elsif params[:user][:confirm_password] != params[:user][:password]
-                flash[:error] = "Passwords must match."
-                redirect_to new_user_path
-            else
-                @user = User.create!(user_params)
-                redirect_to edit_user_path(@user)
-            end
-        rescue
-            flash[:error] = "User could not be created."
-            redirect_to new_user_path
-        end
-    end
-
-    def show
-       redirect_to edit_user_path
-    end
-
-    def login
-    end
-
 end

@@ -5,7 +5,7 @@ Given /the following users exist/ do |users_table|
     end
 end
 
-Given /^I am logged in with username, (.*), and password, (.*)$/ do |username, password|
+Given /^I am logged in with email, (.*), and password, (.*)$/ do |email, password|
 end
 
 Given /^I am not logged in$/ do

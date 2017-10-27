@@ -2,12 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   get '/users' => 'users#index'
-  post '/users' => 'users#create'
-  get '/users/new' => 'users#new', as: 'new_user'
   get '/users/:id/edit' => 'users#edit', as: 'edit_user'
-  get '/user/:id' => 'users#show', as: 'user'
-  post '/user' => 'users#authenticate', as: 'authenticate_user'
-  get 'users/login' => 'users#login', as: 'login_user'
+  # get '/user/:id' => 'users#show', as: 'user'
 
   root :to => redirect('/users')
 
