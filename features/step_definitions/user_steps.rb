@@ -22,3 +22,12 @@ Then /the following interests should (not )?be checked: (.*)/ do |uncheck, inter
         step %{the "interests_#{interest}" checkbox should#{uncheck.nil? ? '' : ' not'} be checked}
     end
 end
+
+Given /^I am signed in with provider "([^"]*)"$/ do |provider|
+    pending
+    # http://samuelmullen.com/2011/05/simple-integration-testing-with-cucumber-and-omniauth/ to help implement
+end
+
+Given /^I am not signed in with provider "([^"]*)"$/ do |provider|
+    pending
+end
