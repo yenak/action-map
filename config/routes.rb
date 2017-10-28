@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => {:registrations => "registrations"}
   get '/users' => 'users#index'
   get '/users/:id/edit' => 'users#edit', as: 'edit_user'
+  devise_for :users, :controllers => {:registrations => "registrations"}
+
   # get '/user/:id' => 'users#show', as: 'user'
 
   root :to => 'map#index'
