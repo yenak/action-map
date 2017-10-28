@@ -2,7 +2,15 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+    <% if flash[:error_message] %>
+      <h3><%= flash[:error_message] %></h3>
+      <% flash.delete(:error_message) %>
+      <ul>
+      <% flash.each do |key, value| %>
+         <li><div class="flash <%= key %>"><%= value %></div></li>
+      <% end %>
+      </ul>
+    <% end %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
