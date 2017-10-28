@@ -2,7 +2,14 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+    <% if !flash.empty? %>
+      <h3>ERROR: The account could not be created for the following reasons:</h3>
+      <ul>
+      <% flash.each do |key, value| %>
+         <li><div class="flash <%= key %>"><%= value %></div></li>
+      <% end %>
+      </ul>
+    <% end %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
