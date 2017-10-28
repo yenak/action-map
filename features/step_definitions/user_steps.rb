@@ -1,7 +1,9 @@
 Given /the following users exist/ do |users_table|
     users_table.hashes.each do |user|
-        # byebug
-        User.create user
+
+        newUser = User.new user
+        newUser.skip_confirmation!
+        newUser.save!
     end
 end
 
