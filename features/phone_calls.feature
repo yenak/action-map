@@ -7,11 +7,11 @@ Feature: Make phone call
   Background:
     Given John Doe has the phone number 111-111-1111
     And the following users exist:
-    | username | password | interests |
-    | user1    | password | []        |
+    | email         | password | interests |
+    | user1@test    | password | []        |
 
   Scenario: calling a representative when logged in
-    Given I am logged in with username, "user1", and password, "password"
+    Given I am logged in with email, "user1@test", and password, "password"
     And I am on John Doe's page
     When I press "Call"
     Then I should place a call to 111-111-1111
