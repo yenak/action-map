@@ -43,7 +43,7 @@ Scenario: Successfully creating a new account
   And I fill in "Password" with "password3"
   And I fill in "Password confirmation" with "password3"
   And I press "Sign up"
-  Then I should be on the login page
+  Then I should be on the new account page
   And I should see "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
 
 Scenario: Attempt to create account with existing email
