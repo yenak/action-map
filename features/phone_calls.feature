@@ -10,16 +10,16 @@ Feature: Make phone call
     | username | password | interests |
     | user1    | password | []        |
 
-  Scenario: calling a representative when logged in
-    Given I am logged in with username, "user1", and password, "password"
-    And I am on John Doe's page
-    When I press "Call"
-    Then I should place a call to 111-111-1111
+  # Scenario: calling a representative when logged in
+  #   Given I am logged in with username, "user1", and password, "password"
+  #   And I am on John Doe's page
+  #   When I press "Call"
+  #   Then I should place a call to 111-111-1111
 
-  Scenario: trying to call a representative when not logged in should not work
-    Given I am not logged in
-    And I am on John Doe's page
-    When I press "Call"
-    Then I should not place a call
-    And I should be on the login page
-    And I should see "You must be logged in to call."
+  # Scenario: trying to call a representative when not logged in should not work
+  #   Given I am not logged in
+  #   And I am on John Doe's page
+  #   When I press "Call"
+  #   Then I should not place a call
+  #   And I should be on the login page
+  #   And I should see "You must be logged in to call."
