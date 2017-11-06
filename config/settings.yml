@@ -1,0 +1,8 @@
+default: &default
+  oauth2:
+
+development:
+  <<: *default
+
+production:
+  <<: *default
