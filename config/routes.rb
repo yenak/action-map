@@ -1,22 +1,20 @@
 Rails.application.routes.draw do
 
   get '/users' => 'users#index'
-  post '/users' => 'users#create'
-  get '/users/new' => 'users#new', as: 'new_user'
   get '/users/:id/edit' => 'users#edit', as: 'edit_user'
-  get '/user/:id' => 'users#show', as: 'user'
-  post '/user' => 'users#authenticate', as: 'authenticate_user'
-  get 'users/login' => 'users#login', as: 'login_user'
+  devise_for :users, :controllers => {:registrations => "registrations"}
+
+  # get '/user/:id' => 'users#show', as: 'user'
 
   root :to => 'map#index'
   get '/state/:state' => 'map#state'
-  
+
   get "/login", to: redirect("/auth/google_oauth2")
-  
+
   get "/auth/google_oauth2/callback", to: "sessions#create"
-  
+
   get "/logout", to: "sessions#destroy"
-  
+
   # get 'users/:id/interests' => 'users#interests', as: 'interests'
 
   # The priority is based upon order of creation: first created -> highest priority.

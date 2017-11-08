@@ -1,11 +1,12 @@
 Given /the following users exist/ do |users_table|
     users_table.hashes.each do |user|
-        # byebug
-        User.create user
+        newUser = User.new user
+        newUser.skip_confirmation!
+        newUser.save!
     end
 end
 
-Given /^I am logged in with username, (.*), and password, (.*)$/ do |username, password|
+Given /^I am logged in with email, (.*), and password, (.*)$/ do |email, password|
 end
 
 Given /^I am not logged in$/ do

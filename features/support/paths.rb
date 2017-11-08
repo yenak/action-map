@@ -14,7 +14,7 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      users_path
+      root_path
 
     when /^the map page/
       root_path
@@ -26,13 +26,13 @@ module NavigationHelpers
     #     user_profile_path(User.find_by_login($1))
 
     when /^the interests page for "(.*)"/
-      edit_user_path(User.find_by_username($1))
+      edit_user_path(User.find_by_email($1))
 
     when /^the new account page/
-      new_user_path
+      new_user_registration_path
 
     when /^the login page/
-      login_user_path
+      new_user_session_path
 
     else
       begin

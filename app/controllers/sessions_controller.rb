@@ -4,9 +4,8 @@ class SessionsController < ApplicationController
   #
   # GET /auth/google_oauth2/callback
   def create
-    byebug
     user_info = request.env["omniauth.auth"]
-    
+
     if not User.where(id: (user_info["uid"].to_i/10000000000000).to_s)
         user           = User.new
         user.id        = (user_info["uid"].to_i/10000000000000).to_s
@@ -16,13 +15,13 @@ class SessionsController < ApplicationController
 
     # session[:user] = Marshal.dump(user)
     puts user_info
-    
+
     redirect_to root_path
   end
-  
+
   def destroy
     session.delete :user
-  
+
     redirect_to root_path
   end
 
