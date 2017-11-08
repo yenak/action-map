@@ -16,5 +16,6 @@
 !/log/.keep
 /tmp
 
-setup.sh
 .byebug_history
+setup.sh
+/config/settings.yml

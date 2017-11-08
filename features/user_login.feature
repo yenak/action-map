@@ -89,3 +89,6 @@ Scenario: User signs in with Google account while not signed into Google
   And I press "Sign in with Google"
   Then I should see "Choose an account to continue"
 
+Scenario: user has the option to use Google account authentication
+  Given I am on the map page
+  Then I should see "Sign in with Google"
