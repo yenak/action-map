@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
   #
   # GET /auth/google_oauth2/callback
   def create
-    byebug
     user_info = request.env["omniauth.auth"]
     user = User.find_by_uid(user_info["uid"].to_s)
     if not user
@@ -23,7 +22,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    byebug
     session.delete :user_id
     redirect_to root_path
   end
