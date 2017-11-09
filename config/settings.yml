@@ -1,0 +1,10 @@
+default: &default
+  oauth2:
+    client_id: <%= Figaro.env.google_client_id %>
+    client_secret: <%= Figaro.env.google_client_secret %>
+
+development:
+  <<: *default
+
+production:
+  <<: *default
