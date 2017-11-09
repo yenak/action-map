@@ -1,3 +1,10 @@
 language: ruby
 rvm:
 - 2.3.0
+
+before_script:
+  - gpg --decrypt --batch --yes --passphrase "$KEY" --output config/application.yml config/application.yml.enc
+
+script:
+  - bundle exec rspec
+  - bundle exec cucumber
