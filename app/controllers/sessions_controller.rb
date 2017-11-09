@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     user_info = request.env["omniauth.auth"]
     user = User.find_by_uid(user_info["uid"].to_s)
-    if user.length == 0
+    if not user
       user           = User.new
       user.provider  = user_info.provider
       user.uid       = user_info["uid"].to_s
