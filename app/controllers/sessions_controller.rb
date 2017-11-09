@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   # GET /auth/google_oauth2/callback
   def create
     user_info = request.env["omniauth.auth"]
-    user = User.where(uid: user_info["uid"].to_s)
+    user = User.find_by_uid(user_info["uid"].to_s)
     if user.length == 0
       user           = User.new
       user.provider  = user_info.provider
