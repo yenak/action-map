@@ -1,16 +1,3 @@
-Given /the following users exist/ do |users_table|
-    users_table.hashes.each do |user|
-        # byebug
-        User.create user
-    end
-end
-
-Given /^I am logged in with username, (.*), and password, (.*)$/ do |username, password|
-end
-
-Given /^I am not logged in$/ do
-end
-
 When /I (un)?check the following interests: (.*)/ do |uncheck, interest_list|
     interest_list.split(', ').each do |interest|
         step %{I #{uncheck.nil? ? '' : 'un'}check "interests_#{interest}"}
@@ -24,10 +11,7 @@ Then /the following interests should (not )?be checked: (.*)/ do |uncheck, inter
 end
 
 Given /^I am signed in with provider "([^"]*)"$/ do |provider|
-    pending
-    # http://samuelmullen.com/2011/05/simple-integration-testing-with-cucumber-and-omniauth/ to help implement
-end
-
-Given /^I am not signed in with provider "([^"]*)"$/ do |provider|
-    pending
+    if provider.downcase == "google"
+        visit login_path
+    end
 end

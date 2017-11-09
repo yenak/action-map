@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     end
 
     def edit
-        @user = User.find params[:id]
+        @user = User.find params[:uid]
         @all_interests = User.all_interests
         @selected_interests = @user.interests
         if params[:interests]

@@ -4,25 +4,24 @@ class SessionsController < ApplicationController
   #
   # GET /auth/google_oauth2/callback
   def create
-    byebug
     user_info = request.env["omniauth.auth"]
-    
-    if not User.where(id: (user_info["uid"].to_i/10000000000000).to_s)
-        user           = User.new
-        user.id        = (user_info["uid"].to_i/10000000000000).to_s
-        user.save
+    user = User.where(uid: user_info["uid"].to_s)
+    if user.length == 0
+      user           = User.new
+      user.provider  = user_info.provider
+      user.uid       = user_info["uid"].to_s
+      user.name      = user_info.info.name
+      user.email     = user_info.info.email
+      user.save
+    else
+      user = user[0]
     end
-    flash[:notice] = "Logged in as #{user_info.info.name}!"
-
-    # session[:user] = Marshal.dump(user)
-    puts user_info
-    
+    session[:user_id] = user.id
     redirect_to root_path
   end
-  
+
   def destroy
     session.delete :user
-  
     redirect_to root_path
   end
 
