@@ -4,8 +4,8 @@ rvm:
 
 before_script:
   - gpg --decrypt --batch --yes --passphrase "$KEY" --output config/application.yml config/application.yml.enc
-  bundle install
-  rake db:migrate
+  - bundle install
+  - rake db:migrate
 
 script:
   - bundle exec rspec
