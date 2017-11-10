@@ -5,11 +5,11 @@ class UsersController < ApplicationController
     end
 
     def index
-        @users = ObjectSpace.each_object(User)
+        @users = User.all
     end
 
     def edit
-        @user = User.find params[:uid]
+        @user = User.find session[:user_id]
         @all_interests = User.all_interests
         @selected_interests = @user.interests
         if params[:interests]

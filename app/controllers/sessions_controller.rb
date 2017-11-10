@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       user.email     = user_info.info.email
       user.save
       session[:user_id] = user.id
-      redirect_to edit_user(user.uid)
+      redirect_to edit_user_path(user.uid)
     else
       session[:user_id] = user.id
       redirect_to root_path
