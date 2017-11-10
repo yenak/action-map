@@ -28,8 +28,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'haml'
 gem 'figaro'
-gem "omniauth"
-gem "omniauth-google-oauth2"
+gem "omniauth", '~> 1.7.1'
+gem "omniauth-google-oauth2", '~> 0.5.2'
 
 gem "config"
 

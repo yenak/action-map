@@ -403,8 +403,8 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   metric_fu
-  omniauth
-  omniauth-google-oauth2
+  omniauth (~> 1.7.1)
+  omniauth-google-oauth2 (~> 0.5.2)
   pg
   rails (= 4.2.9)
   rails_12factor
