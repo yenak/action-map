@@ -25,3 +25,4 @@ states.each do |state, symbol|
 end
 
 Rake::Task['sample_map:populate_ca'].invoke
+Rake::Task['sample_map:populate_va'].invoke
