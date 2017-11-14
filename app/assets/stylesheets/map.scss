@@ -46,7 +46,7 @@ li:last-child {
     border-right: none;
 }
 
-path:hover, polyline:hover, polygon:hover {
+path:not(#frames):hover, polyline:hover, polygon:hover {
   stroke: #0022868 !important;
   stroke-width:2px;
   stroke-linejoin: round;
