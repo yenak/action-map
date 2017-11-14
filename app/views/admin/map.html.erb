@@ -1,0 +1,36 @@
+<ul class="menu">
+  <li class="menu"><a class="menu" href="/">Map</a></li>
+  <li class="menu"><a class="menu" href="">Events</a></li>
+  <li style="float:right"><a class="menu login" href="/login">Login</a></li>
+</ul>
+
+<ul>
+  <% @states.each do |state| %>
+    <li><%= state.name %>,
+      <select>
+        <% ['active', 'semi-active', 'neutral', 'semi-inactive', 'inactive'].each do |activity| %>
+          <% if state.activity == activity %>
+            <option value=<%= activity %> selected=True><%= activity %></option>
+          <% else %>
+            <option value=<%= activity %>><%= activity %></option>
+          <% end %>
+        <% end %>
+      </select>,
+    </li>
+    <ul>
+      <% @counties[state].each do |county| %>
+        <li><%= county.name %>,
+          <select>
+            <% ['active', 'semi-active', 'neutral', 'semi-inactive', 'inactive'].each do |activity| %>
+              <% if county.activity == activity %>
+                <option value=<%= activity %> selected=True><%= activity %></option>
+              <% else %>
+                <option value=<%= activity %>><%= activity %></option>
+              <% end %>
+            <% end %>
+          </select>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post '/user' => 'users#authenticate', as: 'authenticate_user'
   get 'users/login' => 'users#login', as: 'login_user'
 
+  get 'admin/map' => 'admin#map'
+
   root :to => 'map#index'
   get '/state/:state' => 'map#state'
 
