@@ -8,4 +8,4 @@
         = check_box_tag "interests[#{interest}]", 1, @selected_interests.include?(interest), id: "interests_#{interest}"
     = submit_tag 'Save', :id => 'interests_submit'
 
-= link_to 'Return to home page', users_path
+= link_to 'Return to home page', root_path
