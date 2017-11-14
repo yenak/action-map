@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20171108070701) do
   create_table "counties", force: :cascade do |t|
     t.string   "name",                           null: false
     t.integer  "states_id"
-    t.string   "activity",   default: "neutral"		
+    t.string   "activity",   default: "neutral"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
