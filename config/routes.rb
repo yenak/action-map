@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get "/auth/google_oauth2/callback", to: "sessions#create"
 
   get "/logout", to: "sessions#destroy"
+  get "/admin/person/create" to "persons#create", as: 'person_create'
+  get "/admin/person/:id" to "persons#edit", as: 'person_edit'
 
   # get 'users/:id/interests' => 'users#interests', as: 'interests'
 

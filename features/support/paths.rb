@@ -34,6 +34,9 @@ module NavigationHelpers
     when /^the login page/
       login_user_path
 
+    when /^person creation page/
+      person_create_path
+
     else
       begin
         page_name =~ /^the (.*) page$/
