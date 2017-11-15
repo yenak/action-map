@@ -1,7 +1,14 @@
-When /^I should be on the person page for "(.*)" who is a "(.*)" with birthday "(.*)"/ do |fullname, gender, birthday|
+When /^I should be redirected to the person page for "(.*)" who is a "(.*)" with birthday "(.*)"/ do |fullname, gender, birthday|
 	name = fullname.titleize
-	gender = gender.capitalize
+	sex = gender.capitalize
 	date = Date.parse(birthday)
-    person = Person.find(name: name, gender: gender, date: birthday)
-    visit person_edit_path(person)
+    person = Person.where(name: name, sex: sex, birthday: date)[0]
+    visit edit_person_path(person.id)
+end
+
+When /^I select "(.*)" for "(.*)"/ do |value, field_name|
+	selector = "#" + field_name
+	within "select[id=#{field_name}]" do
+		select value
+	end
 end

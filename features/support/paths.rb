@@ -34,8 +34,8 @@ module NavigationHelpers
     when /^the login page/
       login_user_path
 
-    when /^person creation page/
-      person_create_path
+    when /^the new person page/
+      new_person_path
 
     else
       begin
