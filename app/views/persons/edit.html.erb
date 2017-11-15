@@ -1,0 +1,5 @@
+<%= form_tag(create_person_path, method: "post") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Save") %>
+<% end %>
