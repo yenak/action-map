@@ -6,7 +6,7 @@ Feature: User should be able to log in through a Google account
 
 Scenario: user has the option to use Google account authentication
   Given I am on the home page
-  Then I should see "Sign in with Google"
+  Then I should see "Login"
 
 @omniauth_test
 Scenario: user should not see a log in button after signing in
@@ -15,8 +15,7 @@ Scenario: user should not see a log in button after signing in
   Then I should not see "Sign in with Google"
 
 @omniauth_test
-Scenario: user should see a log out butotn after signing in
+Scenario: user should see a log out button after signing in
   Given I am signed in with provider "Google"
   And I am on the home page
-  Then I should see "Log out"
-  And I should see "Example User"
+  Then I should see "Logout"
