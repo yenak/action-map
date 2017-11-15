@@ -12,4 +12,12 @@ Scenario: add new representative
 	And I select "4" for "person_birth_date_3i"
 	And I select "Male" for "sex"
 	When I press "Save"
-	Then I should be redirected to the person page for "Barack Obama" who is a "Male" with birthday "August 4 1961"
+	Then I should be directed to the person page for "Barack Obama" who is a "Male" with birthday "August 4 1961"
+
+Scenario: modify an existing representative
+	Given there is a person named "Barack Obama" who is a "Male" with birthday "August 4 1961"
+	And I should be directed to the person page for "Barack Obama" who is a "Male" with birthday "August 4 1961"
+	When I select "1960" for "person_birth_date_1i"
+	And I press "Save"
+	Then I should be directed to the person page for "Barack Obama" who is a "Male" with birthday "August 4 1960"
+	And there is no person named "Barack Obama" who is a "Male" with birthday "August 4 1961"
