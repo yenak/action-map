@@ -25,6 +25,5 @@ class PersonsController < ApplicationController
 	end
 
 	def show
-
 	end
 end
