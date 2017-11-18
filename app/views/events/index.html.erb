@@ -1,0 +1,64 @@
+<ul>
+  <li><a href="/">Map</a></li>
+  <li><a href="/events">Events</a></li>
+  <% if current_user %>
+    <li style="float:right"><a class="active" href="/logout">Logout</a></li>
+    <li style="float:right"><a class="active" href="<%=edit_user_path(current_user)%>">Profile</a></li>
+  <% else %>
+    <li style="float:right"><a class="active" href="/login">Login</a></li>
+  <% end %>
+</ul>
+
+
+<h1>Events</h1>
+
+<table id='events'>
+    <thead>
+        <tr>
+            <th>
+                Event Name
+            </th>
+            <th>
+                State
+            </th>
+            <th>
+                County
+            </th>
+            <th>
+                Start Time
+            </th>
+            <th>
+                End Time
+            </th>
+            <th>
+                Event Description
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @events.each do |event| %>
+            <tr>
+                <td>
+                    <%= event.name %>
+                </td>
+                <td>
+                    <%= event.state %>
+                </td>
+                <td>
+                    <%= event.county %>
+                </td>
+                <td>
+                    <%= event.start_time %>
+                </td>
+                <td>
+                    <%= event.end_time %>
+                </td>
+                <td>
+                    <%= event.description %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= link_to "Add Event", new_event_path %>
