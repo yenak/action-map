@@ -23,4 +23,8 @@ class PersonsController < ApplicationController
 		end
 		@person.update_attributes(name: new_name, sex: new_sex, birthday: new_birthday)
 	end
+
+	def show
+
+	end
 end

@@ -8,6 +8,7 @@
 
 State.destroy_all
 County.destroy_all
+Person.destroy_all
 
 states = {'ALABAMA': 'AL', 'ALASKA': 'AK', 'ARIZONA': 'AZ', 'ARKANSAS': 'AR',
   'CALIFORNIA': 'CA', 'COLORADO': 'CO', 'CONNECTICUT': 'CT', 'DELAWARE': 'DE',
@@ -26,6 +27,9 @@ activities = ['active', 'semi-active', 'neutral', 'semi-inactive', 'inactive']
 states.each do |state, symbol|
   State.create(name: state, symbol: symbol, activity: activities[rand(5)])
 end
+
+Person.create(name: "Barack Obama", sex: "Male", birthday: Date.parse("1961-11-04"))
+
 
 Rake::Task['sample_map:populate_ca'].invoke
 Rake::Task['sample_map:populate_va'].invoke
