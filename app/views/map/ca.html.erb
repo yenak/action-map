@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ul>
-  <li><a href="/">Map</a></li>
+  <li><%=link_to "Immigration Map", state_map_path(:map=>"immigration_activity")%></li>
+  <li><%=link_to "Gun Control Map", state_map_path(:map=>"gun_control_activity")%></li>
+  <li><%=link_to "Environment Map", state_map_path(:map=>"environment_activity")%></li>
+  <li><%=link_to "Back to Country Map", root_path(:map=>"environment_activity")%></li>
+
   <li><a href="">Events</a></li>
   <% if current_user %>
     <li style="float:right"><a class="active" href="/logout">Logout</a></li>

@@ -11,14 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114230628) do
+ActiveRecord::Schema.define(version: 20171118060953) do
 
   create_table "counties", force: :cascade do |t|
-    t.string   "name",                           null: false
+    t.string   "name",                                        null: false
     t.integer  "states_id"
-    t.string   "activity",   default: "neutral"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.string   "activity",             default: "neutral"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.string   "symbol",               default: "neutral"
+    t.string   "immigration_activity", default: "i_neutral"
+    t.string   "gun_control_activity", default: "gc_neutral"
+    t.string   "environment_activity", default: "e_neutral"
   end
 
   create_table "people", force: :cascade do |t|
@@ -30,11 +34,14 @@ ActiveRecord::Schema.define(version: 20171114230628) do
   end
 
   create_table "states", force: :cascade do |t|
-    t.string   "name",                           null: false
-    t.string   "activity",   default: "neutral"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.string   "name",                                        null: false
+    t.string   "activity",             default: "neutral"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.string   "symbol"
+    t.string   "immigration_activity", default: "i_neutral"
+    t.string   "gun_control_activity", default: "gc_neutral"
+    t.string   "environment_activity", default: "e_neutral"
   end
 
   create_table "users", force: :cascade do |t|
