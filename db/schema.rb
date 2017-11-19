@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171118060953) do
+ActiveRecord::Schema.define(version: 20171118071708) do
 
   create_table "counties", force: :cascade do |t|
     t.string   "name",                                        null: false
@@ -19,10 +19,20 @@ ActiveRecord::Schema.define(version: 20171118060953) do
     t.string   "activity",             default: "neutral"
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
-    t.string   "symbol",               default: "neutral"
     t.string   "immigration_activity", default: "i_neutral"
     t.string   "gun_control_activity", default: "gc_neutral"
     t.string   "environment_activity", default: "e_neutral"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "state"
+    t.string   "county"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "people", force: :cascade do |t|

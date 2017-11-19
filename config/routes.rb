@@ -20,6 +20,12 @@ Rails.application.routes.draw do
   post "/admin/person" => "persons#create", as: 'create_person'
   get "/admin/person/:id" => "persons#edit", as: 'edit_person'
 
+  get '/events', to: 'events#index'
+  post '/events', to: 'events#create'
+  get '/events/new', to: 'events#new', as: 'new_event'
+  get '/events/delete/:id', to: 'events#destroy', as: 'delete_event'
+
+
   # get 'users/:id/interests' => 'users#interests', as: 'interests'
 
   # The priority is based upon order of creation: first created -> highest priority.
