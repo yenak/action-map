@@ -1,7 +1,6 @@
 module EventsHelper
     
-    def us_states
-    [
+    @@states = [
       ['Alabama', 'AL'],
       ['Alaska', 'AK'],
       ['Arizona', 'AZ'],
@@ -55,6 +54,9 @@ module EventsHelper
       ['Wisconsin', 'WI'],
       ['Wyoming', 'WY']
     ]
+    
+    def us_states
+      @@states
     end
 
 end

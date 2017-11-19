@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/events', to: 'events#index'
   post '/events', to: 'events#create'
   get '/events/new', to: 'events#new', as: 'new_event'
+  get '/events/delete/:id', to: 'events#destroy', as: 'delete_event'
 
 
   # get 'users/:id/interests' => 'users#interests', as: 'interests'

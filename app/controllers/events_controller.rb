@@ -6,6 +6,10 @@ class EventsController < ApplicationController
     
     def index
         @events = Event.all
+        @state = params[:state]
+        if @state
+            @events = @events.where(state: @state)
+        end
     end
     
     def new
@@ -14,6 +18,12 @@ class EventsController < ApplicationController
     
     def create
         Event.create(event_params)
+        redirect_to events_path
+    end
+    
+    def destroy
+        @event = Event.find params[:id]
+        Event.destroy(@event)
         redirect_to events_path
     end
     

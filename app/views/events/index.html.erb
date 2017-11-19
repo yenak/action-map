@@ -9,53 +9,37 @@
   <% end %>
 </ul>
 
-
 <h1>Events</h1>
+
+<%= button_to 'Reset Filters', events_path, :method => :get %>
+<br>
+
+<%= form_tag events_path, :method => :get %>
+<%= select_tag :state, options_for_select(us_states) %>
+<%= submit_tag 'Filter by State' %>
 
 <table id='events'>
     <thead>
         <tr>
-            <th>
-                Event Name
-            </th>
-            <th>
-                State
-            </th>
-            <th>
-                County
-            </th>
-            <th>
-                Start Time
-            </th>
-            <th>
-                End Time
-            </th>
-            <th>
-                Event Description
-            </th>
+            <th>Event Name</th>
+            <th>State</th>
+            <th>County</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Event Description</th>
+            <th>Delete Event</th>
         </tr>
     </thead>
     <tbody>
         <% @events.each do |event| %>
             <tr>
-                <td>
-                    <%= event.name %>
-                </td>
-                <td>
-                    <%= event.state %>
-                </td>
-                <td>
-                    <%= event.county %>
-                </td>
-                <td>
-                    <%= event.start_time %>
-                </td>
-                <td>
-                    <%= event.end_time %>
-                </td>
-                <td>
-                    <%= event.description %>
-                </td>
+                <td><%= event.name %></td>
+                <td><%= event.state %></td>
+                <td><%= event.county %></td>
+                <td><%= event.start_time %></td>
+                <td><%= event.end_time %></td>
+                <td><%= event.description %></td>
+                <td><%= link_to 'Delete this Event', delete_event_path(event.id) %></td>
             </tr>
         <% end %>
     </tbody>
