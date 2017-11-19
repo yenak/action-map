@@ -23,8 +23,15 @@ states = {'ALABAMA': 'AL', 'ALASKA': 'AK', 'ARIZONA': 'AZ', 'ARKANSAS': 'AR',
   'UTAH': 'UT', 'VERMONT': 'VT', 'VIRGINIA': 'VA', 'WASHINGTON': 'WA',
   'WEST VIRGINIA': 'WV', 'WISCONSIN': 'WI', 'WYOMING': 'WY'}
 activities = ['active', 'semi-active', 'neutral', 'semi-inactive', 'inactive']
+i_activities = ['i_active', 'i_semi-active', 'i_neutral', 'i_semi-inactive', 'i_inactive']
+gc_activities = ['gc_active', 'gc_semi-active', 'gc_neutral', 'gc_semi-inactive', 'gc_inactive']
+e_activities = ['e_active', 'e_semi-active', 'e_neutral', 'e_semi-inactive', 'e_inactive']
 states.each do |state, symbol|
-  State.create(name: state, symbol: symbol, activity: activities[rand(5)])
+  default = i_activities[rand(5)]
+  State.create(name: state, symbol: symbol, activity: default, 
+    immigration_activity: default, 
+    gun_control_activity: gc_activities[rand(5)], 
+    environment_activity: e_activities[rand(5)])
 end
 
 Rake::Task['sample_map:populate_ca'].invoke
