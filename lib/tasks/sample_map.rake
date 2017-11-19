@@ -17,13 +17,16 @@ namespace :sample_map do
     e_activities = ['e_active', 'e_semi-active', 'e_neutral', 'e_semi-inactive', 'e_inactive']
     counties.each do |county|
       states_id = State.where(symbol: 'CA').first.id
-      County.create(name: county, states_id: states_id, activity: activities[rand(5)],
+      County.create(name: county, states_id: states_id, activity: activities[rand(5)], 
       immigration_activity: i_activities[rand(5)], 
       gun_control_activity: gc_activities[rand(5)], 
       environment_activity: e_activities[rand(5)])
+    # counties.each do |county|
+    #   states_id = State.where(symbol: 'CA').first.id
+    #   County.create(name: county, states_id: states_id, activity: activities[rand(5)],  immigration_activity: activities[rand(5)], gun_control_activity: activities[rand(5)], environment_activity: activities[rand(5)])
     end
-  end
-
+  end       
+  
   desc "Clears values of all counties"
   task depopulate_counties: :environment do
     County.destroy_all
@@ -62,10 +65,13 @@ namespace :sample_map do
     e_activities = ['e_active', 'e_semi-active', 'e_neutral', 'e_semi-inactive', 'e_inactive']
     counties.each do |county|
       states_id = State.where(symbol: 'VA').first.id
-      County.create(name: county, states_id: states_id, activity: activities[rand(5)],
+      County.create(name: county, states_id: states_id, activity: activities[rand(5)], 
       immigration_activity: i_activities[rand(5)], 
       gun_control_activity: gc_activities[rand(5)], 
       environment_activity: e_activities[rand(5)])
+    # counties.each do |county|
+    #   states_id = State.where(symbol: 'VA').first.id
+    #   County.create(name: county, states_id: states_id, activity: activities[rand(5)])
     end
   end
 end

@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<ul>
+  <li><%=link_to "Immigration Map", state_map_path(:map=>"immigration_activity")%></li>
+  <li><%=link_to "Gun Control Map", state_map_path(:map=>"gun_control_activity")%></li>
+  <li><%=link_to "Environment Map", state_map_path(:map=>"environment_activity")%></li>
+  <li><%=link_to "Back to Country Map", root_path(:map=>@map)%></li>
+
+  <li><a href="">Events</a></li>
+  <% if current_user %>
+    <li style="float:right"><a class="active" href="/logout">Logout</a></li>
+    <li style="float:right"><a class="active" href="<%=edit_user_path(current_user)%>">Profile</a></li>
+  <% else %>
+    <li style="float:right"><a class="active" href="/login">Login</a></li>
+  <% end %>
+</ul>
+
 <div id="info-box"></div>
 
 <svg version=1.1 xmlns="http://www.w3.org/2000/svg" height="600px" width="70%">
