@@ -1,3 +1,7 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=8b96b374ce7649c2ad66a391d097b3c82791491875dedbebb787a8aef718c812
+
 language: ruby
 rvm:
 - 2.3.0
@@ -6,7 +10,13 @@ before_script:
   - gpg --decrypt --batch --yes --passphrase "$KEY" --output config/application.yml config/application.yml.enc
   - bundle install
   - bundle exec rake db:migrate
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 script:
   - bundle exec rspec
   - bundle exec cucumber
+  
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
