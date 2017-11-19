@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'users/login' => 'users#login', as: 'login_user'
 
   root :to => 'map#index'
-  get '/state/:state' => 'map#state'
+  get '/state/:state' => 'map#state', as: 'state_map'
 
   get "/login", to: redirect("/auth/google_oauth2")
 
