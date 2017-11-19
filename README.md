@@ -1,8 +1,8 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/6a9eddddb9a324621d23/maintainability)](https://codeclimate.com/github/an-ju/action-map/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e85e1af25605c0458b59/maintainability)](https://codeclimate.com/github/yenak/action-map/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/6a9eddddb9a324621d23/test_coverage)](https://codeclimate.com/github/an-ju/action-map/test_coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/e85e1af25605c0458b59/test_coverage)](https://codeclimate.com/github/yenak/action-map/test_coverage)
 
-[![Build Status](https://travis-ci.org/an-ju/action-map.svg?branch=master)](https://travis-ci.org/an-ju/action-map)
+[![Build Status](https://travis-ci.org/yenak/action-map.svg?branch=master)](https://travis-ci.org/yenak/action-map)
 
 Link to app on Heroku: https://action-map.herokuapp.com/
 
