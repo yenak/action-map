@@ -10,10 +10,20 @@
 </head>
 <body>
 
-<div class="container-fluid bg-1 text-center">
-	<h3>Who Am I?</h3>
-	<img src="<%= asset_path('obama.jpg') %>" />
-	<h3>I'm an adventurer</h3>
+<ul>
+  <li><a href="/">Map</a></li>
+  <li><a href="">Events</a></li>
+  <% if current_user %>
+    <li style="float:right"><a class="active" href="/logout">Logout</a></li>
+    <li style="float:right"><a class="active" href="<%=edit_user_path(current_user)%>">Profile</a></li>
+  <% else %>
+    <li style="float:right"><a class="active" href="/login">Login</a></li>
+  <% end %>
+</ul>
+
+<div class="container-fluid bg-1 text-center row">
+	<img src="<%= asset_path('obama.jpg') %>" class="img-circle profile-pic column" align="left" />
+	<p class="column">Hi there friend </p>
 </div>
 
 </body>
