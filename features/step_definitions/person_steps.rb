@@ -7,24 +7,6 @@ When /^I should be directed to the person page for "(.*)" who is a "(.*)" with b
 	name = fullname.titleize
 	sex = gender.capitalize
 	date = Date.parse(birthday)
-	if name == ""
-		name = nil
-	end
-	if sex == ""
-		sex = nil
-	end
-	if birthday == ""
-		date = nil
-	end
-	if email == ""
-	    email = nil
-	end
-	if phone_number == ""
-		phone_number = nil
-	end
-	if description == ""
-		description = nil
-	end
     person = Person.where(name: name, sex: sex, birthday: date,
     	                  phone_number: phone_number, email: email,
     	                  description: description)[0]
@@ -35,24 +17,6 @@ Given /^there is (a|no) person named "(.*)" who is a "(.*)" with birthday "(.*)"
 	name = fullname.titleize
 	sex = gender.capitalize
 	date = Date.parse(birthday)
-	if name == ""
-		name = nil
-	end
-	if sex == ""
-		sex = nil
-	end
-	if birthday == ""
-		date = nil
-	end
-	if email == ""
-	    email = nil
-	end
-	if phone_number == ""
-		phone_number = nil
-	end
-	if description == ""
-		description = nil
-	end
 	if negative == "no"
 		person = Person.where(name: name, sex: sex, birthday: date,
 				              phone_number: phone_number, email: email,
