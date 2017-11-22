@@ -61,6 +61,7 @@ group :test do
   gem 'simplecov', :require => false
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
+  gem "factory_bot_rails", '~> 4.8.2'
   gem 'database_cleaner'
   gem 'autotest-rails'
   gem 'metric_fu'
