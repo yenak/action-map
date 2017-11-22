@@ -39,7 +39,6 @@ describe PersonsController, type: :controller do
             "birthday(1i)": "2016", "birthday(2i)": "04", "birthday(3i)": "08", "description": "44th President",
             "phone_number": "1-800-333-3333", "email": "bobama@gmail.com"} }
         it "creates a new person" do
-            byebug
             post 'create', {"person": person}
             expect(Person.count).to eq(1)
         end

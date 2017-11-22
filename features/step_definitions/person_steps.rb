@@ -26,8 +26,8 @@ Given /^there is (a|no) person named "(.*)" who is a "(.*)" with birthday "(.*)"
 		end
 	else
     	person = Person.create(name: name, sex: sex, birthday: date,
-    	                  phone_number: phone_number, email: email,
-    	                  description: description)
+	    	                   phone_number: phone_number, email: email,
+	    	                   description: description)
     end
 end
 
