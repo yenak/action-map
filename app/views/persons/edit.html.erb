@@ -1,22 +1,22 @@
 <%= form_tag(edit_person_path(@person), method: "get") do %>
   <%= label_tag("Full Name:") %>
-  <%= text_field_tag(:fullname, @person.name) %>
+  <%= text_field_tag("person[name]", @person.name) %>
   <br>
   <%= label_tag("Date of birth:") %>
-  <%= date_select :person, :birth_date, :start_year=>1900, :end_year=>Date.today.year, :selected=>@person.birthday %>
+  <%= date_select :person, :birthday, {:start_year=>1900, :end_year=>Date.today.year, :selected=>@person.birthday} %>
   <br>
   <%= label_tag("Sex:") %>
-  <%= select_tag "sex", options_for_select([['Male' , 'Male'], ['Female', 'Female']], @person.sex) %>
+  <%= select_tag "person[sex]", options_for_select([['Male' , 'Male'], ['Female', 'Female']], @person.sex) %>
   <br>
   <%= label_tag("Email:") %>
-  <%= text_field_tag(:email, @person.email) %>
+  <%= text_field_tag("person[email]", @person.email) %>
   <br>
   <%= label_tag("Phone Number:") %>
-  <%= text_field_tag(:phone_number, @person.phone_number) %>
+  <%= text_field_tag("person[phone_number]", @person.phone_number) %>
   <br>
   <%= label_tag("Description:") %>
   <br>
-  <%= text_field_tag(:description, @person.description, size:50) %>
+  <%= text_field_tag("person[description]", @person.description, size:50) %>
   <br>
   <%= submit_tag("Save") %>
 <% end %>
