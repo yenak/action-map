@@ -208,10 +208,12 @@ end
 Then /^the "([^"]*)" checkbox(?: within (.*))? should be checked$/ do |label, parent|
   with_scope(parent) do
     field_checked = find_field(label)['checked']
-    if field_checked.respond_to? :should
+    if field_checked.respond_to? :true?
       field_checked.should be_true
     else
-      assert field_checked
+      if not field_checked
+        raise ActiveRecord::RecordNotFound
+      end
     end
   end
 end
@@ -219,10 +221,12 @@ end
 Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label, parent|
   with_scope(parent) do
     field_checked = find_field(label)['checked']
-    if field_checked.respond_to? :should
+    if field_checked.respond_to? :false?
       field_checked.should be_false
     else
-      assert !field_checked
+      if field_checked
+        raise ActiveRecord::RecordNotFound
+      end
     end
   end
 end
