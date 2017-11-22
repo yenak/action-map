@@ -1,3 +1,9 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Theme Simply Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<body>
 <%= form_tag(create_person_path, method: "post") do %>
   <%= label_tag("Full Name:") %>
   <%= text_field_tag(:fullname) %>
@@ -8,5 +14,18 @@
   <%= label_tag("Sex:") %>
   <%= select_tag "sex", options_for_select([['Male' , 'Male'], ['Female', 'Female']]) %>
   <br>
+  <%= label_tag("Email:") %>
+  <%= text_field_tag(:email) %>
+  <br>
+  <%= label_tag("Phone Number:") %>
+  <%= text_field_tag(:phone_number) %>
+  <br>
+  <%= label_tag("Description:") %>
+  <br>
+  <%= text_field_tag(:description, nil, size:50) %>
+  <br>
   <%= submit_tag("Save") %>
 <% end %>
+
+</body>
+</html>

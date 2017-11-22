@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Theme Simply Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<%= asset_path('person.css') %>" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<ul>
+  <li><a href="/">Map</a></li>
+  <li><a href="">Events</a></li>
+  <% if current_user %>
+    <li style="float:right"><a class="active" href="/logout">Logout</a></li>
+    <li style="float:right"><a class="active" href="<%=edit_user_path(current_user)%>">Profile</a></li>
+  <% else %>
+    <li style="float:right"><a class="active" href="/login">Login</a></li>
+  <% end %>
+</ul>
+
+<% if @not_found %>
+	<div class="container-fluid not_found text-center row">
+		<h1>Sorry, that person doesn't exist..</h1>
+	</div>
+<% else %>
+	<div class="container-fluid bg-1 text-center row">
+		<img src="<%= asset_path('obama.jpg') %>" class="img-circle profile-pic column" align="left" />
+		<p class="person_name column"><%= @person.name %></p>
+		<p class="person_birthday column"><%= @person.birthday %></p>
+		<p class="person_sex column"><%= @person.sex %></p>
+		<p class="person_email column"><%= @person.email %></p>
+		<p class="person_phone_number column"><%= @person.phone_number %></p>
+		<p class="person_description column"><%= @person.description %></p>
+	</div>
+<% end %>
+
+</body>
+</html>

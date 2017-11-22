@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171118071708) do
+ActiveRecord::Schema.define(version: 20171121182849) do
 
   create_table "counties", force: :cascade do |t|
     t.string   "name",                                        null: false
@@ -39,8 +39,11 @@ ActiveRecord::Schema.define(version: 20171118071708) do
     t.string   "name"
     t.date     "birthday"
     t.string   "sex"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "description"
   end
 
   create_table "states", force: :cascade do |t|

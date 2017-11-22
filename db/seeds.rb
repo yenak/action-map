@@ -8,6 +8,7 @@
 
 State.destroy_all
 County.destroy_all
+Person.destroy_all
 
 states = {'ALABAMA': 'AL', 'ALASKA': 'AK', 'ARIZONA': 'AZ', 'ARKANSAS': 'AR',
   'CALIFORNIA': 'CA', 'COLORADO': 'CO', 'CONNECTICUT': 'CT', 'DELAWARE': 'DE',
@@ -33,6 +34,15 @@ states.each do |state, symbol|
     gun_control_activity: gc_activities[rand(5)], 
     environment_activity: e_activities[rand(5)])
 end
+
+Person.create(name: "Barack Obama", sex: "Male", birthday: Date.parse("1961-11-04"),
+              description: "Barack Hussein Obama II (born August 4, 1961) served as the 44th President of
+              the United States from 2009 to 2017. The first African American to assume the presidency in U.S.
+              history, he previously served in the U.S. Senate representing Illinois from 2005 to 2008 and in
+              the Illinois State Senate from 1997 to 2004.",
+              email: "bobama@gmail.com",
+              phone_number:"1800-333-3333")
+
 
 Rake::Task['sample_map:populate_ca'].invoke
 Rake::Task['sample_map:populate_va'].invoke
