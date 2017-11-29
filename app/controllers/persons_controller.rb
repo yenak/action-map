@@ -1,11 +1,7 @@
 class PersonsController < ApplicationController
 	def create
 		person_params = params[:person]
-		string_date = [person_params["birthday(1i)"], person_params["birthday(2i)"], person_params["birthday(3i)"]].join("-")
-		person_params["birthday"] = Date.parse(string_date)
-		@person = Person.create!(name: person_params["name"], birthday: person_params["birthday"],
-			sex: person_params["sex"], email: person_params["email"], phone_number: person_params["phone_number"],
-			description: person_params["description"])
+		@person = Person.create_person(person_params)
 		redirect_to edit_person_path(@person)
 	end
 
@@ -16,11 +12,7 @@ class PersonsController < ApplicationController
 		@person = Person.find(params[:id])
 		person_params = params[:person]
 		if person_params
-			string_date = [person_params["birthday(1i)"], person_params["birthday(2i)"], person_params["birthday(3i)"]].join("-")
-			person_params["birthday"] = Date.parse(string_date)
-			@person.update_attributes(name: person_params["name"], birthday: person_params["birthday"],
-				sex: person_params["sex"], email: person_params["email"], phone_number: person_params["phone_number"],
-				description: person_params["description"])
+			@person.update_person(person_params)
 		end
 	end
 
