@@ -12,7 +12,7 @@
 </ul>
 
 <hi>Account: <%= @user.name %></hi>
-<%= form_tag edit_user_path(@user), :method => :get do %>
+<%= form_tag edit_user_path(@user), :method => :post do %>
   Include:
   <% @all_interests.each do |interest| %>
     <%= interest %>

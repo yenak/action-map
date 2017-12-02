@@ -10,9 +10,10 @@ class SessionsController < ApplicationController
       user = User.create(provider: user_info.provider,
                          uid: user_info["uid"].to_s,
                          name: user_info.info.name,
-                         email: user_info.info.email)
+                         email: user_info.info.email,
+                         interests: "")
       session[:user_id] = user.id
-      redirect_to edit_user_path(user.uid)
+      redirect_to user_path(user.id)
     else
       session[:user_id] = user.id
       redirect_to root_path
