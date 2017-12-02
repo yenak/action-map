@@ -16,10 +16,6 @@ class UsersController < ApplicationController
     end
 
     def show
-       redirect_to edit_user_path
-    end
-
-    def show
         @user = User.find params[:id]
         @all_interests = User.all_interests
         @selected_interests = @user.interests

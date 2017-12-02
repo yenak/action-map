@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
 
   get '/users' => 'users#index'
-  post '/users' => 'users#create'
-  get '/users/new' => 'users#new', as: 'new_user'
   post '/user/:id/edit' => 'users#edit', as: 'edit_user'
   get '/user/:id' => 'users#show', as: 'user'
-  post '/user' => 'users#authenticate', as: 'authenticate_user'
-  get 'users/login' => 'users#login', as: 'login_user'
 
   root :to => 'map#index'
   get '/state/:state' => 'map#state', as: 'state_map'
