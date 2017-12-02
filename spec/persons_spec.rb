@@ -45,9 +45,6 @@ describe PersonsController, type: :controller do
         it "creates a new person" do
             expect(Person.count).to eq(1)
         end
-        it "creates a date object for the person" do
-            expect(controller.params["person"]["birthday"]).to eq(birthday)
-        end
         it "created the right person" do
             created_person = Person.where(name: "Barack Obama", sex: "Male",
                 birthday: Date.parse("1961-04-08"), description: "44th President",
