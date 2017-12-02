@@ -12,6 +12,10 @@
 
 <h1>Add New Event</h1>
 
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name, style: "color:red" %>
+  <br><br>
+<% end -%>
 
 <%= form_tag(events_path) do %>
 
@@ -19,7 +23,7 @@
   <%= text_field :event, :name %>
   <br><br>
   <%= label :event, :state, "State:" %>
-  <%= text_field :event, :state %>
+  <%= select_tag :state, options_for_select(us_states), {:prompt => "Select a State"}%>
   <br><br>
   <%= label :event, :county, "County:" %>
   <%= text_field :event, :county %>
