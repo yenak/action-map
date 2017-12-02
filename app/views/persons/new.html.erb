@@ -1,9 +1,10 @@
 <html lang="en">
 <head>
-  <title>Bootstrap Theme Simply Me</title>
+  <title>Representative</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"></head>
 <body>
+<%= render "shared/navbar" %>
 <%= form_tag(create_person_path, method: "post") do %>
   <%= label_tag("Full Name:") %>
   <%= text_field_tag("person[name]") %>

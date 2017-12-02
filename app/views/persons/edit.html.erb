@@ -1,3 +1,5 @@
+<%= render "shared/navbar" %>
+
 <%= form_tag(edit_person_path(@person), method: "get") do %>
   <%= label_tag("Full Name:") %>
   <%= text_field_tag("person[name]", @person.name) %>
