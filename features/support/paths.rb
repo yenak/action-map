@@ -26,7 +26,7 @@ module NavigationHelpers
     #     user_profile_path(User.find_by_login($1))
 
     when /^the interests page for "(.*)"/
-      edit_user_path(User.find_by_uid($1))
+      user_path(User.find_by_uid($1))
 
     when /^the new account page/
       new_user_path

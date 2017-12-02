@@ -7,7 +7,7 @@
   <li><a href="/events">Events</a></li>
   <% if current_user %>
     <li style="float:right"><a class="active" href="/logout">Logout</a></li>
-    <li style="float:right"><a class="active" href="<%=edit_user_path(current_user)%>">Profile</a></li>
+    <li style="float:right"><a class="active" href="<%=user_path(current_user)%>">Profile</a></li>
   <% else %>
     <li style="float:right"><a class="active" href="/login">Login</a></li>
   <% end %>
