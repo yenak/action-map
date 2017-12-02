@@ -7,14 +7,13 @@ class SessionsController < ApplicationController
     user_info = request.env["omniauth.auth"]
     user = User.find_by_uid(user_info["uid"].to_s)
     if not user
-      user           = User.new
-      user.provider  = user_info.provider
-      user.uid       = user_info["uid"].to_s
-      user.name      = user_info.info.name
-      user.email     = user_info.info.email
-      user.save
+      user = User.create(provider: user_info.provider,
+                         uid: user_info["uid"].to_s,
+                         name: user_info.info.name,
+                         email: user_info.info.email,
+                         interests: "")
       session[:user_id] = user.id
-      redirect_to edit_user_path(user.uid)
+      redirect_to user_path(user.id)
     else
       session[:user_id] = user.id
       redirect_to root_path

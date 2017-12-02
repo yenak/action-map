@@ -1,0 +1,12 @@
+<ul>
+  <li><%=link_to "Immigration Map", root_path(:map=>"immigration_activity")%></li>
+  <li><%=link_to "Gun Control Map", root_path(:map=>"gun_control_activity")%></li>
+  <li><%=link_to "Environment Map", root_path(:map=>"environment_activity")%></li>
+  <li><a href="/events">Events</a></li>
+  <% if current_user %>
+    <li style="float:right"><a class="active" href="/logout">Logout</a></li>
+    <li style="float:right"><a class="active" href="<%=user_path(current_user)%>">Profile</a></li>
+  <% else %>
+    <li style="float:right"><a class="active" href="/login">Login</a></li>
+  <% end %>
+</ul>

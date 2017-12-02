@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<%= render "shared/navbar" %>
+
+<hi>Account: <%= @user.name %></hi>
+<%= form_tag edit_user_path(@user), :method => :post do %>
+  Include:
+  <% @all_interests.each do |interest| %>
+    <%= interest %>
+    <%= check_box_tag "interests[#{interest}]", 1, @selected_interests.include?(interest), id: "interests_#{interest}" %>
+  <% end %>
+  <%= submit_tag 'Save', :id => 'interests_submit' %>
+<% end %>
