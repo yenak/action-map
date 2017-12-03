@@ -1,11 +1,7 @@
-%h1 HOME PAGE
-
-= link_to "Log In", login_user_path
+%h1 USERS
 
 %table#users
     %tbody
         - @users.each do |user|
             %tr
                 %td= link_to "Edit #{user.name}", edit_user_path(user)
-
-= link_to 'Create new account', new_user_path

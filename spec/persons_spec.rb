@@ -31,6 +31,22 @@ describe PersonsController, type: :controller do
                 get 'show', {:id => 999}
                 expect(assigns(:not_found)).to eq(true)
             end
+            it "should still display the show page" do
+                get 'show', {:id => 999}
+                expect(response).to render_template(:show)
+            end
+        end
+
+        describe "Go to the representatives page" do
+            before(:each) do
+                get 'index'
+            end
+            it "shows all the representatives" do
+                expect(assigns(:persons)).to eq(Person.all)
+            end
+            it 'should display the index page for persons' do
+                expect(response).to render_template(:index)
+            end
         end
     end
 

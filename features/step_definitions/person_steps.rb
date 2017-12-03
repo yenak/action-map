@@ -3,6 +3,13 @@ require 'cgi'
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "selectors"))
 
+Given /the following representatives exist/ do |representatives_table|
+  representatives_table.hashes.each do |representative|
+    Person.create representative
+  end
+end
+
+
 When /^I should be directed to the person page for "(.*)" who is a "(.*)" with birthday "(.*)", email "(.*)", phone number "(.*)", and description "(.*)"/ do |fullname, gender, birthday, email, phone_number, description|
 	name = fullname.titleize
 	sex = gender.capitalize
