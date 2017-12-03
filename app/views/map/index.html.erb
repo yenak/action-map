@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
-<ul class="menu">
-  <li class="menu"><a class="menu" href="/">Map</a></li>
-  <li class="menu"><a class="menu" href="">Events</a></li>
-  <li style="float:right"><a class="menu login" href="/login">Login</a></li>
-</ul>
-
-<% if current_user %>
-  <div>Welcome <%=current_user.name%>!</div>
-  <%= link_to "Log out", logout_path %>
-<% else %>
-  <%= link_to "Sign in with Google", login_path %>
-<% end %>
+<%= render "shared/navbar" %>
 
 <div id="info-box"></div>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="959" height="593">
+
+<svg id="map" xmlns="http://www.w3.org/2000/svg" width="959" height="593">
 <title>Blank US states map</title>
 <g id="outlines">
   <path id="AK"
@@ -97,7 +87,7 @@ $.each(states, function(state, activity) {
 	$('#'+state).each(function() {
 		$(this).addClass(activity);
     $(this).click(function() {
-      window.location.href = "/state/"+state;
+      window.location = "/state/"+state+"?map="+"<%=@map%>";
     });
 	});
 });

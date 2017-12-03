@@ -1,0 +1,33 @@
+<%= render "shared/navbar" %>
+
+
+<h1>Add New Event</h1>
+
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name, style: "color:red" %>
+  <br><br>
+<% end -%>
+
+<%= form_tag(events_path) do %>
+
+  <%= label :event, :name, "Event Title:" %>
+  <%= text_field :event, :name %>
+  <br><br>
+  <%= label :event, :state, "State:" %>
+  <%= select_tag :state, options_for_select(us_states), {:prompt => "Select a State"}%>
+  <br><br>
+  <%= label :event, :county, "County:" %>
+  <%= text_field :event, :county %>
+  <br><br>
+  <%= label :event, :start_time, "Start Date and Time:" %>
+  <%= datetime_select :event, :start_time %>
+  <br><br>
+  <%= label :event, :end_time, "End Date and Time:" %>
+  <%= datetime_select :event, :end_time %>
+  <br><br>
+  <%= label :event, :description, "Event Description:" %>
+  <%= text_area :event, :description %>
+  <br><br>
+  <%= submit_tag "Add Event" %>
+
+<% end %>

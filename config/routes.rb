@@ -1,24 +1,31 @@
 Rails.application.routes.draw do
 
   get '/users' => 'users#index'
-  post '/users' => 'users#create'
-  get '/users/new' => 'users#new', as: 'new_user'
-  get '/users/:uid/edit' => 'users#edit', as: 'edit_user'
+  post '/user/:id/edit' => 'users#edit', as: 'edit_user'
   get '/user/:id' => 'users#show', as: 'user'
-  post '/user' => 'users#authenticate', as: 'authenticate_user'
-  get 'users/login' => 'users#login', as: 'login_user'
 
   get 'admin/map' => 'admin#map'
   post 'admin/update_activity' => 'admin#update_activity'
 
   root :to => 'map#index'
-  get '/state/:state' => 'map#state'
+  get '/state/:state' => 'map#state', as: 'state_map'
 
   get "/login", to: redirect("/auth/google_oauth2")
 
   get "/auth/google_oauth2/callback", to: "sessions#create"
 
   get "/logout", to: "sessions#destroy"
+  get "/admin/person/new" => "persons#new", as: 'new_person'
+  post "/admin/person" => "persons#create", as: 'create_person'
+  get "/admin/person/:id" => "persons#edit", as: 'edit_person'
+  get "/person/:id" => "persons#show", as: 'person'
+  get "/persons" => "persons#index", as: 'persons'
+
+  get '/events', to: 'events#index'
+  post '/events', to: 'events#create'
+  get '/events/new', to: 'events#new', as: 'new_event'
+  get '/events/delete/:id', to: 'events#destroy', as: 'delete_event'
+
 
   # get 'users/:id/interests' => 'users#interests', as: 'interests'
 

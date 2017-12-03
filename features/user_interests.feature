@@ -7,11 +7,31 @@ Feature: User should be able to log in to an existing account or create a new on
 Background: interests "environment", "gun control", "immigration" exist
 
 @omniauth_test
-Scenario: save interests button works
+Scenario: new user should have no interests checked
   Given I am signed in with provider "Google"
   And I am on the interests page for "1234"
   When I press "Save"
   Then I should be on the interests page for "1234"
+  And the following interests should not be checked: immigration, gun control, environment
+  When I go to the home page
+  And I go to the interests page for "1234"
+  Then the following interests should not be checked: immigration, gun control, environment
+
+@omniauth_test
+Scenario: new user should have no interests checked
+  Given I am signed in with provider "Google"
+  And I am on the interests page for "1234"
+  When I press "Save"
+  Then I should be on the interests page for "1234"
+  And the following interests should not be checked: immigration, gun control, environment
+
+@omniauth_test
+Scenario: not checking any interests and saving should be valid
+  Given I am signed in with provider "Google"
+  And I am on the interests page for "1234"
+  When I press "Save"
+  Then I should be on the interests page for "1234"
+  And the following interests should not be checked: immigration, gun control, environment
 
 @omniauth_test
 Scenario: interest selections are saved
@@ -35,4 +55,3 @@ Scenario: interests still saved after page change
   And I go to the interests page for "1234"
   Then the following interests should be checked: environment
   And the following interests should not be checked: immigration, gun control
-#   pages need to be added to paths

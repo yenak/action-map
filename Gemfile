@@ -57,10 +57,11 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails', '2.14'
+  gem 'rspec-rails', '3.4.2'
   gem 'simplecov', :require => false
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
+  gem "factory_bot_rails", '~> 4.8.2'
   gem 'database_cleaner'
   gem 'autotest-rails'
   gem 'metric_fu'

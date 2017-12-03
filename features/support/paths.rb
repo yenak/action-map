@@ -26,13 +26,32 @@ module NavigationHelpers
     #     user_profile_path(User.find_by_login($1))
 
     when /^the interests page for "(.*)"/
-      edit_user_path(User.find_by_uid($1))
+      user_path(User.find_by_uid($1))
 
     when /^the new account page/
       new_user_path
 
     when /^the login page/
       login_user_path
+
+    when /^the new person page/
+      new_person_path
+
+    when /^the events page/
+      events_path
+
+    when /^the add events page/
+      new_event_path
+
+    when /^the representatives page/
+      persons_path
+
+    when /^the representative page for "(.*)"/
+      if $1 == "does_not_exist"
+        person_path(999)
+      else
+        person_path(Person.where(name: $1)[0])
+      end
 
     else
       begin

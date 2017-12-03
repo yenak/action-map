@@ -9,7 +9,49 @@
   left: 100px;
 }
 
-path:not(#frames):hover, polyline:hover, polygon:hover {
+#map {
+  display: block;
+  margin: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+li {
+    border-right: 1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+path:hover, polyline:hover, polygon:hover {
   stroke: #0022868 !important;
   stroke-width:2px;
   stroke-linejoin: round;
@@ -44,4 +86,55 @@ path:not(#frames):hover, polyline:hover, polygon:hover {
 }
 .inactive{
   fill: #71c7ec;
+}
+
+
+.i_active {
+  fill: #005073;
+}
+.i_semi-active {
+  fill: #107dac;
+}
+.i_neutral {
+  fill: #189ad3;
+}
+.i_semi-inactive {
+  fill: #1ebbd7;
+}
+.i_inactive{
+  fill: #71c7ec;
+}
+
+
+.gc_active {
+  fill: #009900;
+}
+.gc_semi-active {
+  fill: #00cc00;
+}
+.gc_neutral {
+  fill: #33ff33;
+}
+.gc_semi-inactive {
+  fill: #99ff99;
+}
+.gc_inactive{
+  fill: #ccffcc;
+}
+
+
+.e_active {
+  fill: #6600cc;
+}
+.e_semi-active {
+  fill: #7f00ff;
+}
+.e_neutral {
+  fill: #9933ff;
+}
+.e_semi-inactive {
+  fill: #b266ff;
+}
+.e_inactive{
+  fill: #E5CCFF;
 }
