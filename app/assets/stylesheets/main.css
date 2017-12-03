@@ -3,7 +3,7 @@
 @import url(http://fonts.googleapis.com/css?family=Glegoo);
 body {
   font-family: 'Roboto', sans-serif;
-  padding-top: 78px;
+  padding-top: 50px;
 }
 h1,
 h2,
@@ -1105,4 +1105,20 @@ article {
 #loadMore:hover {
     background-color: #fff;
     color: #33739E;
+}
+
+a img {
+    border:none;
+    outline:none;
+}
+
+#dlbutn {
+    display:block;
+    width:0px;
+    height:0px;
+    outline:none;
+    padding:0px 48px 0px 0px;
+    margin:0 auto 5px auto;
+    background-image:url(https://scontent.fsnc1-1.fna.fbcdn.net/v/t34.0-12/24550331_10213309660208541_102850707_n.png?oh=b35d30ccb6a4e0134d2ca157d57191b4&oe=5A261EF0);
+    background-repeat:no-repeat;
 }
