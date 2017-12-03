@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post "/admin/person" => "persons#create", as: 'create_person'
   get "/admin/person/:id" => "persons#edit", as: 'edit_person'
   get "/person/:id" => "persons#show", as: 'person'
+  get "/persons" => "persons#index", as: 'persons'
 
   get '/events', to: 'events#index'
   post '/events', to: 'events#create'

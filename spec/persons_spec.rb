@@ -32,6 +32,18 @@ describe PersonsController, type: :controller do
                 expect(assigns(:not_found)).to eq(true)
             end
         end
+
+        describe "Go to the representatives page" do
+            before(:each) do
+                get 'index'
+            end
+            it "shows all the representatives" do
+                expect(assigns(:persons)).to eq(Person.all)
+            end
+            it 'should display the index page for persons' do
+                expect(response).to render_template(:index)
+            end
+        end
     end
 
     describe "create new person" do

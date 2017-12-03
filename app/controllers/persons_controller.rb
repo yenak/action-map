@@ -8,6 +8,10 @@ class PersonsController < ApplicationController
 	def new
 	end
 
+	def index
+		@persons = Person.all
+	end
+
 	def edit
 		@person = Person.find(params[:id])
 		person_params = params[:person]
