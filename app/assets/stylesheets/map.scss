@@ -25,6 +25,7 @@ ul {
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
+    top: 0;
 }
 
 /* Links inside the navbar */
@@ -35,6 +36,7 @@ ul a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    top: 0;
 }
 
 li {
