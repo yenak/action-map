@@ -1,0 +1,38 @@
+<ul class="menu">
+  <li class="menu"><a class="menu" href="/">Map</a></li>
+  <li class="menu"><a class="menu" href="">Events</a></li>
+  <li style="float:right"><a class="menu login" href="/login">Login</a></li>
+</ul>
+
+<ul>
+  <% @states.each do |state| %>
+    <li><%= state.name %>,
+      <select id=<%= state.id %> class='state'>
+        <% ['active', 'semi-active', 'neutral', 'semi-inactive', 'inactive'].each do |activity| %>
+          <% if state.activity == activity %>
+            <option value=<%= activity %> selected=True><%= activity %></option>
+          <% else %>
+            <option value=<%= activity %>><%= activity %></option>
+          <% end %>
+        <% end %>
+      </select>,
+    </li>
+    <ul>
+      <% @counties[state].each do |county| %>
+        <li><%= county.name %>,
+          <select id=<%= county.id %> class='county'>
+            <% ['active', 'semi-active', 'neutral', 'semi-inactive', 'inactive'].each do |activity| %>
+              <% if county.activity == activity %>
+                <option value=<%= activity %> selected=True><%= activity %></option>
+              <% else %>
+                <option value=<%= activity %>><%= activity %></option>
+              <% end %>
+            <% end %>
+          </select>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>
+
+<%= javascript_include_tag "admin.js" %>

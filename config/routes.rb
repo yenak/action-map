@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   post '/user/:id/edit' => 'users#edit', as: 'edit_user'
   get '/user/:id' => 'users#show', as: 'user'
 
+  get 'admin/map' => 'admin#map'
+  post 'admin/update_activity' => 'admin#update_activity'
+
   root :to => 'map#index'
   get '/state/:state' => 'map#state', as: 'state_map'
 
