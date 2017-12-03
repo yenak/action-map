@@ -21,3 +21,7 @@ Scenario: modify an existing representative
 	And I press "Save"
 	Then I should be directed to the person page for "Barack Obama" who is a "Male" with birthday "August 4 1960", email "bobama@gmail.com", phone number "1800-333-3333", and description ""
 	And there is no person named "Barack Obama" who is a "Male" with birthday "August 4 1961" 1961", email "bobama@gmail.com", phone number "1800-333-3333", and description ""
+
+Scenario: go to the page of a person who doesn't exist
+	Given I am on the representative page for "does_not_exist"
+	Then I should see "Sorry, that person doesn't exist."
