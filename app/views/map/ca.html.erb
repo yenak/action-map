@@ -2189,8 +2189,8 @@
 <%= javascript_include_tag "map.js" %>
 <script>
 var counties = {}
-<% @counties.each do |county, activity| %>
-	counties['#<%= county %>'] = '<%= activity %>'
+<% @counties.each do |county| %>
+	counties['#<%= county.name %>'] = '<%= county.activity %>'
 <% end %>
 $.each(counties, function(county, activity) {
 	$(county).each(function() {
