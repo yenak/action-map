@@ -1,9 +1,3 @@
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-
 
 .cd-words-wrapper {
   display: inline-block;
@@ -27,10 +21,6 @@ Primary style
   opacity: 1;
 }
 
-
-xslide 
-
--------------------------------- */
 .cd-headline.slide span {
   display: inline-block;
   padding: .2em 0;
@@ -165,5 +155,3 @@ xslide
     transform: translateY(100%);
   }
 }
-/* -------------------------------- 
-
