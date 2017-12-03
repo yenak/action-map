@@ -13,16 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20171121182849) do
 
-  create_table "calls", force: :cascade do |t|
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.integer  "representative_id"
-    t.integer  "user_id"
-  end
-
-  add_index "calls", ["representative_id"], name: "index_calls_on_representative_id"
-  add_index "calls", ["user_id"], name: "index_calls_on_user_id"
-
   create_table "counties", force: :cascade do |t|
     t.string   "name",                                        null: false
     t.integer  "states_id"
@@ -54,16 +44,6 @@ ActiveRecord::Schema.define(version: 20171121182849) do
     t.string   "email"
     t.string   "phone_number"
     t.string   "description"
-  end
-
-  create_table "representatives", force: :cascade do |t|
-    t.string   "name",         null: false
-    t.string   "phone_number"
-    t.string   "state"
-    t.string   "city"
-    t.string   "interests"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
   end
 
   create_table "states", force: :cascade do |t|
