@@ -14,9 +14,8 @@ class PersonsController < ApplicationController
 
 	def edit
 		@person = Person.find(params[:id])
-		person_params = params[:person]
-		if person_params
-			@person.update_person(person_params)
+		if params[:person]
+			@person.update_person(params[:person])
 		end
 	end
 
