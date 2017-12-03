@@ -4,8 +4,112 @@
 
 <div id="info-box"></div>
 
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <title>Eventual</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<svg id="map" xmlns="http://www.w3.org/2000/svg" width="959" height="593">
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="css/ionicons.min.css">
+        <!-- animate css -->
+        <link rel="stylesheet" href="css/animate.css">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="css/slider.css">
+        <!-- owl craousel css -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/owl.theme.css">
+        <link rel="stylesheet" href="css/jquery.fancybox.css">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="css/main.css">
+        <!-- responsive css -->
+        <link rel="stylesheet" href="css/responsive.css">
+
+        <!-- Template Javascript Files
+        ================================================== -->
+        <!-- modernizr js -->
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <!-- jquery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- owl carouserl js -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- bootstrap js -->
+
+        <script src="js/bootstrap.min.js"></script>
+        <!-- wow js -->
+        <script src="js/wow.min.js"></script>
+        <!-- slider js -->
+        <script src="js/slider.js"></script>
+        <script src="js/jquery.fancybox.js"></script>
+        <!-- template main js -->
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+
+        <!--
+        ==================================================
+        Slider Section Start
+        ================================================== -->
+        <section id="hero-area" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="block wow fadeInUp" data-wow-delay=".3s">
+
+                            <!-- Slider -->
+                            <section class="cd-intro">
+                                <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s" >
+                                <span>Find Issues You Care About</span><br>
+                                <span class="cd-words-wrapper">
+                                    <b class="is-visible">Lead the Next Big Change</b>
+                                    <b>DEVELOPER</b>
+                                    <b>FATHER</b>
+                                </span>
+                                </h1>
+                                </section> <!-- cd-intro -->
+                                <!-- /.slider -->
+                                <h2 class="wow fadeInUp animated" data-wow-delay=".6s" >
+                                    Find Issues, Contact Representatives, Repeat<br>
+                                </h2>
+                                <a class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green" data-wow-delay=".9s" href="#works" data-section="#works" >View Map</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--/#main-slider-->
+            <!--
+            ==================================================
+            Slider Section Start
+            ================================================== -->
+            <!--
+            ==================================================
+            Portfolio Section Start
+            ================================================== -->
+            <section id="works" class="works">
+                <div class="container">
+                    <div class="section-heading">
+                        <h1 class="title wow fadeInDown" data-wow-delay=".3s">Map</h1>
+                        <p class="wow fadeInDown" data-wow-delay=".5s">
+                            Click on the issue you care about, and see which area cares the most.
+                        </p>
+                    </div>
+                    <svg id="map" xmlns="http://www.w3.org/2000/svg" width="959" height="593">
 <title>Blank US states map</title>
 <g id="outlines">
   <path id="AK"
@@ -75,6 +179,26 @@
 </g>
 <path id="frames" fill="none" stroke="#A9A9A9" stroke-width="2" d="M215,493v55l36,45 M0,425h147l68,68h85l54,54v46"/>
 </svg>
+                    </div>
+                </div>
+            </section> <!-- #works -->
+
+
+
+            <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+            <footer id="footer">
+                <div class="container">
+                    <div class="col-md-8">
+                        <p class="copyright">Functionalities intended for Demo Purposes. ActionMap.</p>
+                    </div>
+                </div>
+            </footer> <!-- /#footer -->
+
+        </body>
+    </html>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <%= javascript_include_tag "map.js" %>
