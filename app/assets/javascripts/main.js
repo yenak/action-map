@@ -2,10 +2,7 @@
 (function($){
     $.fn.scrollingTo = function( opts ) {
         var defaults = {
-            animationTime : 1000,
-            easing : '',
-            callbackBeforeTransition : function(){},
-            callbackAfterTransition : function(){}
+            animationTime : 1000, easing : '', callbackBeforeTransition : function(){}, callbackAfterTransition : function(){}
         };
 
         var config = $.extend( {}, defaults, opts );
