@@ -47,7 +47,11 @@ module NavigationHelpers
       persons_path
 
     when /^the representative page for "(.*)"/
-      person_path(Person.where(name: $1)[0])
+      if $1 == "does_not_exist"
+        person_path(999)
+      else
+        person_path(Person.where(name: $1)[0])
+      end
 
     else
       begin

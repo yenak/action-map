@@ -31,6 +31,10 @@ describe PersonsController, type: :controller do
                 get 'show', {:id => 999}
                 expect(assigns(:not_found)).to eq(true)
             end
+            it "should still display the show page" do
+                get 'show', {:id => 999}
+                expect(response).to render_template(:show)
+            end
         end
 
         describe "Go to the representatives page" do
