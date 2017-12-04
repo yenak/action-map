@@ -15,13 +15,7 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       root_path
-
-    when /^the map page/
-      root_path
-    
-    when /^the CA state map page/
-      state_map_path("CA")
-
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
@@ -30,12 +24,6 @@ module NavigationHelpers
 
     when /^the interests page for "(.*)"/
       user_path(User.find_by_uid($1))
-
-    when /^the new account page/
-      new_user_path
-
-    when /^the login page/
-      login_user_path
 
     when /^the new person page/
       new_person_path
