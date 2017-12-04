@@ -1,7 +1,7 @@
 class MapController < ApplicationController
   def index
     flash[:notice] = params[:map] || ""
-    @map = params[:map] || ""
+    @map = params[:map] || "immigration_activity"
     @states = State.get_states_with_activity(@map)
   end
 

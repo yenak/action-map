@@ -8,7 +8,7 @@
                     <div class="section-heading">
                         <h1 class="title wow fadeInDown" data-wow-delay=".3s">California Map</h1>
                         <p class="wow fadeInDown" data-wow-delay=".5s">
-                            <%= @map.gsub(/_/, " ") + " policies " %>
+                            <%= @map[0..-10].gsub(/_/, " ") + " policies " %>
                         </p>
                     </div>
 
