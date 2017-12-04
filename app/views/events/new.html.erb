@@ -4,8 +4,10 @@
 <h1>Add New Event</h1>
 
 <% flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, class: name, style: "color:red" %>
-  <br><br>
+  <% if name == "state" or name == "date" %>
+    <%= content_tag :div, msg, class: name, style: "color:red" %>
+    <br><br>
+  <% end -%>
 <% end -%>
 
 <%= form_tag(events_path) do %>
