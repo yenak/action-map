@@ -2,6 +2,15 @@
 
 <%= render "shared/navbar" %>
 
+<section id="works" class="works">
+                <div class="container">
+                    <div class="section-heading">
+                        <h1 class="title wow fadeInDown" data-wow-delay=".3s">Virginia Map</h1>
+                        <p class="wow fadeInDown" data-wow-delay=".5s">
+                            <%= @map[0..-10].gsub(/_/, " ") + " policies" %>
+                        </p>
+                    </div>
+
 <div id="info-box"></div>
 
 <svg version=1.1 xmlns="http://www.w3.org/2000/svg" height="600px" width="70%">
