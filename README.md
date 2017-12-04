@@ -47,4 +47,9 @@ bundle exec rake db:seed
 ```
 Afterward, we recommend that you add your own code climate badges and travisCI.
 You will also need to make sure that your travisCI has the decryption key for
-application.yml file in order for it to run properly.
+application.yml file in order for it to run properly. If you plan
+to use heroku, you will make sure that you set an environment variable
+containing the secret decryption key as well so that it can get the application.yml file. Once you have the
+application.yml file, the figaro gem will automatically put the keys in its environment,
+so if you need to access the google_client_id key inside another file, you can simply use
+`<%= Figaro.env.google_client_id %>`.
