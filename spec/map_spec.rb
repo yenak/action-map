@@ -6,9 +6,9 @@ describe MapController, type: :controller do
             get 'index'
             expect(assigns(:states)).to eq(State.all)
         end
-        it "gets the passed in map type if none are passed in" do
+        it "defaults to immigration map if no map type is passed in" do
             get 'index'
-            expect(assigns(:map)).to eq("")
+            expect(assigns(:map)).to eq("immigration_activity")
         end
         it "gets the passed in map type if one is passed in" do
             get 'index', { :map => "gun control" }
