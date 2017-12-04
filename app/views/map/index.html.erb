@@ -104,8 +104,9 @@
             <section id="works" class="works">
                 <div class="container">
                     <div class="section-heading">
-                        <h1 class="title wow fadeInDown" data-wow-delay=".3s">Map</h1>
+                        <h1 class="title wow fadeInDown" data-wow-delay=".3s">National Map</h1>
                         <p class="wow fadeInDown" data-wow-delay=".5s">
+                            <%= @map[0..-10].gsub(/_/, " ") + " policies " %> <br>
                             Click on the issue you care about, and see which area cares the most.
                         </p>
                     </div>

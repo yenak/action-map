@@ -18,6 +18,9 @@ module NavigationHelpers
 
     when /^the map page/
       root_path
+    
+    when /^the CA state map page/
+      state_map_path("CA")
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

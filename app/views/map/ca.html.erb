@@ -2,6 +2,16 @@
 
 <%= render "shared/navbar" %>
 
+
+<section id="works" class="works">
+                <div class="container">
+                    <div class="section-heading">
+                        <h1 class="title wow fadeInDown" data-wow-delay=".3s">California Map</h1>
+                        <p class="wow fadeInDown" data-wow-delay=".5s">
+                            <%= @map.gsub(/_/, " ") + " policies " %>
+                        </p>
+                    </div>
+
 <div id="info-box"></div>
 <svg id="map" version="1.1" xmlns="http://www.w3.org/2000/svg"
 	 id="Map_of_the_counties_of_California_without_legend"
