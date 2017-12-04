@@ -36,3 +36,14 @@ Scenario: end date is before start date
   When I press "Add Event"
   Then I should be on the add events page
   And I should see "Make sure end date is after start date."
+  
+Scenario: delete event
+  Given I am on the add events page
+  And I fill in "Event Title" with "Event 1"
+  And I select "California" from "state"
+  And I press "Add Event"
+  And I should be on the events page
+  And I should see "Event 1"
+  When I follow "Delete this Event"
+  Then I should be on the events page 
+  And I should not see "Event 1"
